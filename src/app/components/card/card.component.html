@@ -11,22 +11,33 @@
     <div class="card-section top-section">
         <div class="video-wrapper">
             <video
-                #videoElement
-                class="video-card"
-                src="assets/videos/video1.mp4"
-                muted
-                loop
-                preload="auto"
-                (mouseenter)="onMouseEnter()"
-                (mouseleave)="onMouseLeave()"
+                    *ngIf="card.videoSrc"
+                    #videoElement
+                    class="video-card"
+                    [src]="card.videoSrc"
+                    muted
+                    loop
+                    preload="auto"
+                    (mouseenter)="onMouseEnter()"
+                    (mouseleave)="onMouseLeave()"
             >
                 Your browser does not support the video tag.
             </video>
-            <audio #audioElement src="assets/music/music1.mp3" loop></audio>
+
+            <img
+                    *ngIf="card.gifSrc"
+                    class="video-card"
+                    [src]="card.gifSrc"
+                    alt="GIF Preview"
+            />
+
+            <audio *ngIf="card.audioSrc" #audioElement [src]="card.audioSrc" loop></audio>
         </div>
+
     </div>
+
     <div class="card-section bottom-section">
-        <p>RHRKHCNERFJHWHE</p>
-        <div class="price-wrapper">200 LEI</div>
+        <p>{{ card.title }}</p>
+        <div class="price-wrapper">{{ card.price }} {{ card.currency }}</div>
     </div>
 </div>
