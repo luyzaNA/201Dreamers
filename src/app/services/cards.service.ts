@@ -18,7 +18,7 @@ export class CardsService {
         price: 150,
         currency: 'EURO',
         gifSrc: 'assets/videos/video6.gif',
-        audioSrc: 'assets/audio/music1.mp3'
+        audioSrc: 'assets/music/music1.mp3'
       },
       {
         id: 2,
@@ -26,16 +26,15 @@ export class CardsService {
         price: 140,
         currency: 'EURO',
         videoSrc: 'assets/videos/video1.mp4',
-        audioSrc: 'assets/audio/music1.mp3'
+        audioSrc: 'assets/music/music1.mp3'
       },
       {
         id: 3,
         title: 'Woman Sweater',
         price: 250,
         currency: 'EURO',
-        gifSrc: 'assets/videos/video2' +
-            '.gif',
-        audioSrc: 'assets/audio/music1.mp3'
+        gifSrc: 'assets/videos/video2.gif',
+        audioSrc: 'assets/music/music1.mp3'
       },
       {
         id: 4,
@@ -43,7 +42,7 @@ export class CardsService {
         price: 80,
         currency: 'EURO',
         gifSrc: 'assets/videos/video3.gif',
-        audioSrc: 'assets/audio/music1.mp3'
+        audioSrc: 'assets/music/music1.mp3'
       },
       {
         id: 5,
@@ -51,7 +50,7 @@ export class CardsService {
         price: 100,
         currency: 'EURO',
         gifSrc: 'assets/videos/video4.gif',
-        audioSrc: 'assets/audio/music1.mp3'
+        audioSrc: 'assets/music/music1.mp3'
       },
       {
         id: 6,
@@ -59,7 +58,7 @@ export class CardsService {
         price: 139.99,
         currency: 'EURO',
         gifSrc: 'assets/videos/video5.gif',
-        audioSrc: 'assets/audio/music1.mp3'
+        audioSrc: 'assets/music/music1.mp3'
       },
       {
         id: 7,
@@ -67,7 +66,7 @@ export class CardsService {
         price: 100,
         currency: 'EURO',
         gifSrc: 'assets/videos/video4.gif',
-        audioSrc: 'assets/audio/music1.mp3'
+        audioSrc: 'assets/music/music1.mp3'
       },
       {
         id: 8,
@@ -75,7 +74,7 @@ export class CardsService {
         price: 139.99,
         currency: 'EURO',
         gifSrc: 'assets/videos/video5.gif',
-        audioSrc: 'assets/audio/music1.mp3'
+        audioSrc: 'assets/music/music1.mp3'
       }
       ])
   }
