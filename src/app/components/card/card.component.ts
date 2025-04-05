@@ -13,34 +13,35 @@ import {NgIf} from "@angular/common";
 
 export class CardComponent {
   isMusicStarted: boolean = false;
-  @ViewChild('videoElement') videoElement: ElementRef | undefined;
-  audio: HTMLAudioElement | undefined;
 
-  constructor() {
-    this.audio = new Audio('assets/audio/music.mp3');
+  @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
+  @ViewChild('audioElement') audioElement!: ElementRef<HTMLAudioElement>;
+
+  ngAfterViewInit() {
+    if (this.videoElement?.nativeElement) {
+      this.videoElement.nativeElement.muted = true;
+    }
   }
 
   toggleMusic() {
+    const audio = this.audioElement?.nativeElement;
 
-    if (this.isMusicStarted) {
-      this.audio?.pause();
-    } else {
-      this.audio?.play();
+    if (audio) {
+      if (this.isMusicStarted) {
+        audio.pause();
+        audio.currentTime = 0;
+      } else {
+        audio.play();
+      }
+      this.isMusicStarted = !this.isMusicStarted;
     }
-    this.isMusicStarted = !this.isMusicStarted;
   }
 
   onMouseEnter() {
-    const video = this.videoElement?.nativeElement;
-    if (video) {
-      video.play();
-    }
+    this.videoElement?.nativeElement?.play();
   }
 
   onMouseLeave() {
-    const video = this.videoElement?.nativeElement;
-    if (video) {
-      video.pause();
-    }
+    this.videoElement?.nativeElement?.pause();
   }
 }
