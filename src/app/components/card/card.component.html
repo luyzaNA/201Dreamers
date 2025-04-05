@@ -3,26 +3,30 @@
         <img *ngIf="isMusicStarted" src="assets/images/audio.png" alt="audio" />
         <img *ngIf="!isMusicStarted" src="assets/images/mute.png" alt="mute" />
     </div>
-    <div class="icon-circle top-right"></div>
+
+    <div class="icon-circle top-right">
+        <img src="assets/images/bin.png" alt="bin" />
+    </div>
+
     <div class="card-section top-section">
         <div class="video-wrapper">
             <video
                 #videoElement
                 class="video-card"
                 src="assets/videos/video1.mp4"
-                [muted]="!isMusicStarted"
-            loop
-            preload="auto"
-            (mouseenter)="onMouseEnter()"
-            (mouseleave)="onMouseLeave()">
-            Your browser does not support the video tag.
+                muted
+                loop
+                preload="auto"
+                (mouseenter)="onMouseEnter()"
+                (mouseleave)="onMouseLeave()"
+            >
+                Your browser does not support the video tag.
             </video>
+            <audio #audioElement src="assets/music/music1.mp3" loop></audio>
         </div>
     </div>
     <div class="card-section bottom-section">
-        <p>BLUZĂ DE STRDĂ</p>
-        <div class="image-wrapper">
-            <img src="assets/images/bin.png" alt="produces" />
-        </div>
+        <p>RHRKHCNERFJHWHE</p>
+        <div class="price-wrapper">200 LEI</div>
     </div>
 </div>
