@@ -5,6 +5,7 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {FormsModule} from "@angular/forms";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 import {HttpClientModule} from "@angular/common/http";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,7 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatBadgeModule,
     FormsModule,
     HttpClientModule,
-    TranslatePipe
+    TranslatePipe,
+    RouterLink
   ],
   providers: [TranslateService],
   templateUrl: './nav-bar.component.html',
@@ -23,14 +25,16 @@ import {HttpClientModule} from "@angular/common/http";
 })
 export class NavBarComponent {
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private router: Router) {
     this.translate.setDefaultLang('ro');
     this.translate.use('ro');
   }
   switchCulture(language: string) {
     if (language === 'en') {
+      this.router.navigate(['/British']);
       this.translate.use('en');
     } else if (language === 'ro') {
+      this.router.navigate(['/Romania']);
       this.translate.use('ro');
     }
   }
