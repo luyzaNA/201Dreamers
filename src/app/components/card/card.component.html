@@ -1,12 +1,23 @@
 <div class="card-container">
-    <div class="icon-circle top-left" (click)="playMusic()">
+    <div class="icon-circle top-left" (click)="toggleMusic()">
         <img *ngIf="isMusicStarted" src="assets/images/audio.png" alt="audio" />
-        <img *ngIf="!isMusicStarted" src="assets/images/mute.png" alt="audio" />
+        <img *ngIf="!isMusicStarted" src="assets/images/mute.png" alt="mute" />
     </div>
-    <div class="icon-circle top-right">
-    </div>
-
+    <div class="icon-circle top-right"></div>
     <div class="card-section top-section">
+        <div class="video-wrapper">
+            <video
+                #videoElement
+                class="video-card"
+                src="assets/videos/video1.mp4"
+                [muted]="!isMusicStarted"
+            loop
+            preload="auto"
+            (mouseenter)="onMouseEnter()"
+            (mouseleave)="onMouseLeave()">
+            Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
     <div class="card-section bottom-section">
         <p>BLUZĂ DE STRDĂ</p>
