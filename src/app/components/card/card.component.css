@@ -1,6 +1,6 @@
 .card-container {
     position: relative;
-    width: 17%;
+    width: 400px;
     border-radius: 16px;
     overflow: hidden;
     background-color: #f0f0f0;
@@ -23,6 +23,8 @@
     text-align: center;
     color: white;
     font-weight: bold;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
 .icon-circle {
@@ -49,7 +51,7 @@
     right: 8px;
 
     img {
-        width: 50px;
+        width: 35px;
         height: auto;
         object-fit: contain;
     }

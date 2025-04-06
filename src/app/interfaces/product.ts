@@ -1,10 +1,9 @@
-export interface Card {
+export interface Product {
     id: number;
     title: string;
     price: number;
     currency: string;
-    videoSrc: string;
-    isMusicStarted: boolean;
-    audioIconSrc: string;
-    binIconSrc: string;
+    videoSrc?: string;
+    gifSrc?: string;
+    audioSrc?: string;
 }

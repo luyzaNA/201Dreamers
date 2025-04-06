@@ -1,5 +1,6 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {NgIf} from "@angular/common";
+import {Product} from "../../interfaces/product";
 
 @Component({
   selector: 'app-card',
@@ -12,13 +13,15 @@ import {NgIf} from "@angular/common";
 })
 
 export class CardComponent {
+  @Input() card!: Product;
+
   isMusicStarted: boolean = false;
 
   @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
   @ViewChild('audioElement') audioElement!: ElementRef<HTMLAudioElement>;
 
   ngAfterViewInit() {
-    if (this.videoElement?.nativeElement) {
+    if (this.videoElement) {
       this.videoElement.nativeElement.muted = true;
     }
   }
