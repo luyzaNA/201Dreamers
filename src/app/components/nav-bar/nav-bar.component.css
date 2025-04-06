@@ -5,6 +5,7 @@
 }
 
 .navbar {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,6 +14,8 @@
   box-shadow: 0 4px 6px -2px #05185a;
   background-color: #ffffff;
   color: #05185a;
+  z-index: 10;
+
 }
 
 .navbar-left .logo {
